@@ -26,6 +26,11 @@ vars:
     apiVersion: v1
 
 images:
+<<<<<<< HEAD
 - name: public.ecr.aws/j1r0q0g6/notebooks/access-management
   newName: public.ecr.aws/j1r0q0g6/notebooks/access-management
   newTag: v1.3.1-rc.0
+=======
+- name: docker.io/kubeflownotebookswg/kfam
+  newTag: v1.6.0
+>>>>>>> v1.6.0

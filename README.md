@@ -41,6 +41,7 @@ This repo periodically syncs all official Kubeflow components from their respect
 
 | Component | Local Manifests Path | Upstream Revision |
 | - | - | - |
+<<<<<<< HEAD
 | TFJob Operator | apps/tf-training/upstream | [v1.1.0](https://github.com/kubeflow/tf-operator/tree/v1.1.0/manifests) |
 | PyTorch Operator | apps/pytorch-job/upstream | [v0.7.0](https://github.com/kubeflow/pytorch-operator/tree/v0.7.0/manifests) |
 | MPI Operator | apps/mpi-job/upstream | [b367aa55886d2b042f5089df359d8e067e49e8d1](https://github.com/kubeflow/mpi-operator/tree/b367aa55886d2b042f5089df359d8e067e49e8d1/manifests) |
@@ -58,6 +59,31 @@ This repo periodically syncs all official Kubeflow components from their respect
 | KFServing | apps/kfserving/upstream | [e189a510121c09f764f749143b80f6ee6baaf48b (release-0.5)](https://github.com/kubeflow/kfserving/tree/e189a510121c09f764f749143b80f6ee6baaf48b/config) |
 | Kubeflow Pipelines | apps/pipeline/upstream | [1.5.1](https://github.com/kubeflow/pipelines/tree/1.5.1/manifests/kustomize) |
 | Kubeflow Tekton Pipelines | apps/kfp-tekton/upstream | [v0.8.0](https://github.com/kubeflow/kfp-tekton/tree/v0.8.0/manifests/kustomize) |
+=======
+| Training Operator | apps/training-operator/upstream | [v1.5.0](https://github.com/kubeflow/training-operator/tree/v1.5.0/manifests) |
+| Notebook Controller | apps/jupyter/notebook-controller/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/notebook-controller/config) |
+| Tensorboard Controller | apps/tensorboard/tensorboard-controller/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/tensorboard-controller/config) |
+| Central Dashboard | apps/centraldashboard/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/centraldashboard/manifests) |
+| Profiles + KFAM | apps/profiles/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/profile-controller/config) |
+| PodDefaults Webhook | apps/admission-webhook/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/admission-webhook/manifests) |
+| Jupyter Web App | apps/jupyter/jupyter-web-app/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/crud-web-apps/jupyter/manifests) |
+| Tensorboards Web App | apps/tensorboard/tensorboards-web-app/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/crud-web-apps/tensorboards/manifests) |
+| Volumes Web App | apps/volumes-web-app/upstream | [v1.6.0](https://github.com/kubeflow/kubeflow/tree/v1.6.0/components/crud-web-apps/volumes/manifests) |
+| Katib | apps/katib/upstream | [v0.14.0-rc.0](https://github.com/kubeflow/katib/tree/v0.14.0-rc.0/manifests/v1beta1) |
+| KServe | contrib/kserve/kserve | [release-0.8](https://github.com/kserve/kserve/tree/8079f375cbcedc4d45a1b4aade2e2308ea6f9ae8/install/v0.8.0) |
+| KServe Models Web App | contrib/kserve/models-web-app | [v0.8.1](https://github.com/kserve/models-web-app/tree/v0.8.1/config) |
+| Kubeflow Pipelines | apps/pipeline/upstream | [2.0.0-alpha.3](https://github.com/kubeflow/pipelines/tree/2.0.0-alpha.3/manifests/kustomize) |
+| Kubeflow Tekton Pipelines | apps/kfp-tekton/upstream | [v1.2.1](https://github.com/kubeflow/kfp-tekton/tree/v1.2.1/manifests/kustomize) |
+
+The following is also a matrix with versions from common components that are
+used from the different projects of Kubeflow:
+
+| Component | Local Manifests Path | Upstream Revision |
+| - | - | - |
+| Istio | common/istio-1-14 | [1.14.1](https://github.com/istio/istio/releases/tag/1.14.1) |
+| Knative | common/knative | [1.2.5](https://github.com/knative/serving/releases/tag/knative-v1.2.5) |
+
+>>>>>>> v1.6.0
 ## Installation
 
 Starting Kubeflow 1.3, the Manifests WG provides two options for installing Kubeflow official components and common services with kustomize. The aim is to help end users install easily and to help distribution owners build their opinionated distributions from a tested starting point:
@@ -74,7 +100,11 @@ The `example` directory contains an example kustomization for the single command
 
 ### Prerequisites
 
+<<<<<<< HEAD
 - `Kubernetes` (tested with version `1.17`) with a default [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+=======
+- `Kubernetes` (up to `1.22`) with a default [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+>>>>>>> v1.6.0
 - `kustomize` (version `3.2.0`) ([download link](https://github.com/kubernetes-sigs/kustomize/releases/tag/v3.2.0))
     - :warning: Kubeflow 1.3.0 is not compatible with the latest versions of of kustomize 4.x. This is due to changes in the order resources are sorted and printed. Please see [kubernetes-sigs/kustomize#3794](https://github.com/kubernetes-sigs/kustomize/issues/3794) and [kubeflow/manifests#1797](https://github.com/kubeflow/manifests/issues/1797). We know this is not ideal and are working with the upstream kustomize team to add support for the latest versions of kustomize as soon as we can.
 - `kubectl`

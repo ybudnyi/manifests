@@ -11,9 +11,17 @@ There are two goals for the unittests:
 
 Examples of kustomizations that we would like to verify are applied and generate the expected output
 
+<<<<<<< HEAD
 * Patches
 * Variable substitution
 * Composition of resources
+=======
+**To use KFserving v0.5/0.6 instead of KServe v0.7, comment the 6,7th lines and uncomment the 10,11th lines here [e2e/utils/kserve.py](https://github.com/kubeflow/manifests/compare/master/tests/e2e/utils/kserve.py#L6-L11)**
+
+The e2e tests are completely independent of the underlying K8s cluster, as well
+as the platform of the cluster. These tests should be able to run in real
+world clusters, as well as ephemeral ones like KinD.
+>>>>>>> v1.6.0
 
 The general approach to doing this is
 
